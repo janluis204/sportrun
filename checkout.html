@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - SportRun Shoes</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .checkout-container {
+            padding: 40px 0;
+        }
+        
+        .checkout-title {
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .checkout-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .checkout-section {
+            margin-bottom: 30px;
+            padding: 20px;
+            background: #f7f7f7;
+            border-radius: 5px;
+        }
+        
+        .checkout-section h3 {
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .form-group {
+            margin-bottom: 15px;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        
+        .form-row {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .form-row .form-group {
+            flex: 1;
+        }
+        
+        .order-summary {
+            margin-top: 30px;
+        }
+        
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+        }
+        
+        .summary-row.total {
+            font-weight: bold;
+            font-size: 18px;
+            border-top: 2px solid #ddd;
+            margin-top: 10px;
+            padding-top: 15px;
+        }
+        
+        .payment-methods {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .payment-method {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
+        .payment-method.active {
+            border-color: #ff6b00;
+            background: rgba(255, 107, 0, 0.05);
+        }
+        
+        .back-btn {
+            color: #333;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .back-btn:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Encabezado -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="/api/placeholder/50/50" alt="SportRun Logo">
+                <h1>SportRun</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html#about">Sobre Nosotros</a></li>
+                <li><a href="index.html#catalog">Catálogo</a></li>
+                <li><a href="index.html#contact">Contacto</a></li>
+            </ul>
+            <div class="cart-icon">
+                <span>🛒</span>
+                <span class="cart-count">0</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Contenido del Checkout -->
+    <section class="checkout-container container">
+        <a href="carrito.html" class="back-btn">← Volver al carrito</a>
+        
+        <h2 class="checkout-title">Finalizar Compra</h2>
+        
+        <div class="checkout-form">
+            <div class="checkout-section">
+                <h3>Información de Contacto</h3>
+                <div class="form-group">
+                    <label for="nombre">Nombre completo</label>
+                    <input type="text" id="nombre" class="form-control" placeholder="Nombre y apellidos">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" class="form-control" placeholder="tu@email.com">
+                </div>
+                <div class="form-group">
+                    <label for="telefono">Teléfono</label>
+                    <input type="tel" id="telefono" class="form-control" placeholder="+34 XXX XXX XXX">
+                </div>
+            </div>
+            
+            <div class="checkout-section">
+                <h3>Dirección de Envío</h3>
+                <div class="form-group">
+                    <label for="direccion">Dirección</label>
+                    <input type="text" id="direccion" class="form-control" placeholder="Calle, número, piso...">
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="ciudad">Ciudad</label>
+                        <input type="text" id="ciudad" class="form-control" placeholder="Ciudad">
+                    </div>
+                    <div class="form-group">
+                        <label for="codigo_postal">Código Postal</label>
+                        <input type="text" id="codigo_postal" class="form-control" placeholder="XXXXX">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="provincia">Provincia</label>
+                    <input type="text" id="provincia" class="form-control" placeholder="Provincia">
+                </div>
+            </div>
+            
+            <div class="checkout-section">
+                <h3>Método de Pago</h3>
+                <div class="payment-methods">
+                    <div class="payment-method active" onclick="seleccionarMetodoPago(this)">
+                        <img src="/api/placeholder/30/30" alt="Tarjeta" class="payment-method-icon">
+                        <span>Tarjeta</span>
+                    </div>
+                    <div class="payment-method" onclick="seleccionarMetodoPago(this)">
+                        <img src="/api/placeholder/30/30" alt="PayPal" class="payment-method-icon">
+                        <span>PayPal</span>
+                    </div>
+                    <div class="payment-method" onclick="seleccionarMetodoPago(this)">
+                        <img src="/api/placeholder/30/30" alt="Transferencia" class="payment-method-icon">
+                        <span>Transferencia</span>
+                    </div>
+                </div>
+                
+                <div id="paymentForm">
+                    <div class="form-group">
+                        <label for="cardNumber">Número de tarjeta</label>
+                        <input type="text" id="cardNumber" class="form-control" placeholder="1234 5678 9012 3456">
+                    </div>
+                    <div class="form-group">
+                        <label for="cardName">Nombre en la tarjeta</label>
+                        <input type="text" id="cardName" class="form-control" placeholder="Nombre como aparece en la tarjeta">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="cardExpiry">Fecha de expiración</label>
+                            <input type="text" id="cardExpiry" class="form-control" placeholder="MM/AA">
+                        </div>
+                        <div class="form-group">
+                            <label for="cardCvv">CVV</label>
+                            <input type="text" id="cardCvv" class="form-control" placeholder="123">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="checkout-section order-summary">
+                <h3>Resumen del Pedido</h3>
+                <div id="orderItems">
+                    <!-- El resumen de los productos se cargará con JavaScript -->
+                </div>
+                
+                <div class="summary-row">
+                    <span>Subtotal:</span>
+                    <span id="subtotal">$0.00</span>
+                </div>
+                <div class="summary-row">
+                    <span>Envío:</span>
+                    <span>Gratis</span>
+                </div>
+                <div class="summary-row total">
+                    <span>Total:</span>
+                    <span id="total">$0.00</span>
+                </div>
+                
+                <button class="orange-btn" style="width: 100%; margin-top: 20px;" onclick="finalizarCompra()">
+                    Finalizar Compra
+                </button>
+                <div class="ssl-badge" style="text-align: center; margin-top: 10px;">
+                    <span>🔒</span> Pago seguro con certificado SSL
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-container">
+            <div class="footer-column">
+                <h3>SportRun</h3>
+                <ul>
+                    <li><a href="index.html#about">Sobre Nosotros</a></li>
+                    <li><a href="#">Nuestra Historia</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Tiendas</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Ayuda</h3>
+                <ul>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Envíos</a></li>
+                    <li><a href="#">Devoluciones</a></li>
+                    <li><a href="#">Estado del Pedido</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Contacto</h3>
+                <ul>
+                    <li><a href="#">Email</a></li>
+                    <li><a href="#">Teléfono</a></li>
+                    <li><a href="#">WhatsApp</a></li>
+                    <li><a href="#">Dirección</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Legal</h3>
+                <ul>
+                    <li><a href="#">Términos y Condiciones</a></li>
+                    <li><a href="#">Política de Privacidad</a></li>
+                    <li><a href="#">Política de Cookies</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 SportRun. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="checkout.js"></script>
+</body>
+</html>

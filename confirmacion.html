@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmación de Compra - SportRun</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        
+        .confirmation-container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 30px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .confirmation-icon {
+            font-size: 60px;
+            color: #28a745;
+            margin-bottom: 20px;
+        }
+        
+        .confirmation-title {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #28a745;
+        }
+        
+        .confirmation-message {
+            font-size: 18px;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+        
+        .order-details {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 30px 0;
+            text-align: left;
+        }
+        
+        .detail-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .detail-row:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        .detail-label {
+            font-weight: bold;
+            color: #555;
+        }
+        
+        .order-number {
+            font-size: 20px;
+            font-weight: bold;
+            margin: 20px 0;
+            color: #333;
+        }
+        
+        .btn-continue {
+            background-color: #ff6b00;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+        }
+        
+        .btn-continue:hover {
+            background-color: #e05d00;
+        }
+        
+        .customer-service {
+            margin-top: 40px;
+            font-size: 14px;
+            color: #666;
+        }
+        
+        @media (max-width: 768px) {
+            .confirmation-container {
+                margin: 20px;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Encabezado (igual que en tus otras páginas) -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="/api/placeholder/50/50" alt="SportRun Logo">
+                <h1>SportRun</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html#about">Sobre Nosotros</a></li>
+                <li><a href="index.html#catalog">Catálogo</a></li>
+                <li><a href="index.html#contact">Contacto</a></li>
+            </ul>
+            <div class="cart-icon" onclick="window.location.href='carrito.html'">
+                <span>🛒</span>
+                <span class="cart-count">0</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Contenido de Confirmación -->
+    <main>
+        <div class="confirmation-container">
+            <div class="confirmation-icon">✓</div>
+            <h1 class="confirmation-title">¡Gracias por tu compra!</h1>
+            <p class="confirmation-message">
+                Tu pedido ha sido procesado con éxito. Hemos enviado un correo electrónico con los detalles de tu compra.
+            </p>
+            
+            <div class="order-number">
+                Número de pedido: #<span id="orderNumber">SR-<script>document.write(Math.floor(Math.random() * 1000000))</script></span>
+            </div>
+            
+            <div class="order-details">
+                <h3>Resumen del pedido</h3>
+                <div id="orderSummary">
+                    <!-- Los productos se cargarán con JavaScript -->
+                </div>
+                <div class="detail-row">
+                    <span class="detail-label">Método de pago:</span>
+                    <span id="paymentMethod">Tarjeta de crédito</span>
+                </div>
+                <div class="detail-row">
+                    <span class="detail-label">Dirección de envío:</span>
+                    <span id="shippingAddress">Cargando...</span>
+                </div>
+                <div class="detail-row">
+                    <span class="detail-label">Fecha estimada de entrega:</span>
+                    <span id="deliveryDate">Cargando...</span>
+                </div>
+                <div class="detail-row total">
+                    <span class="detail-label">Total pagado:</span>
+                    <span id="orderTotal">$0.00</span>
+                </div>
+            </div>
+            
+            <a href="index.html" class="btn-continue">Volver a la tienda</a>
+            
+            <div class="customer-service">
+                <p>¿Tienes alguna pregunta? Contáctanos en <a href="mailto:soporte@sportrun.com">soporte@sportrun.com</a></p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer (igual que en tus otras páginas) -->
+    <footer>
+        <div class="container footer-container">
+            <div class="footer-column">
+                <h3>SportRun</h3>
+                <ul>
+                    <li><a href="index.html#about">Sobre Nosotros</a></li>
+                    <li><a href="#">Nuestra Historia</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Tiendas</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Ayuda</h3>
+                <ul>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Envíos</a></li>
+                    <li><a href="#">Devoluciones</a></li>
+                    <li><a href="#">Estado del Pedido</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Contacto</h3>
+                <ul>
+                    <li><a href="#">Email</a></li>
+                    <li><a href="#">Teléfono</a></li>
+                    <li><a href="#">WhatsApp</a></li>
+                    <li><a href="#">Dirección</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Legal</h3>
+                <ul>
+                    <li><a href="#">Términos y Condiciones</a></li>
+                    <li><a href="#">Política de Privacidad</a></li>
+                    <li><a href="#">Política de Cookies</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 SportRun. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="confirmacion.js"></script>
+</body>
+</html>

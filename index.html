@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SportRun Shoes - Zapatos deportivos de calidad</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Encabezado -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="/api/placeholder/50/50" alt="SportRun Logo">
+                <h1>SportRun</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#about">Sobre Nosotros</a></li>
+                <li><a href="#catalog">Catálogo</a></li>
+                <li><a href="#contact">Contacto</a></li>
+            </ul>
+            <div class="cart-icon" onclick="window.location.href='carrito.html'">
+                <span>🛒</span>
+                <span class="cart-count">0</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sección Sobre Nosotros -->
+    <section id="about" class="about-section">
+        <div class="container about-container">
+            <div class="about-image">
+                <img src="Nike Air Max Excee Shoes White Pure Platinum CD4165-100 Men's Multi Size NEW.jpeg" alt="Tienda SportRun">
+            </div>
+            <div class="about-content">
+                <h2>Sobre SportRun</h2>
+                <p>En SportRun nos apasiona el deporte y la comodidad. Desde 2010, nos hemos especializado en ofrecer los mejores zapatos deportivos para atletas de todos los niveles.</p>
+                <p>Nuestro compromiso es brindar productos de alta calidad, con tecnología avanzada y diseños modernos que impulsen tu rendimiento y te ayuden a alcanzar tus metas.</p>
+                <p>Trabajamos con las mejores marcas del mercado y contamos con un equipo de expertos que te asesorarán para encontrar el calzado perfecto para tu deporte favorito.</p>
+                <a href="#catalog" class="orange-btn">Ver Catálogo</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Catálogo -->
+    <section id="catalog" class="catalog-section">
+        <div class="container">
+            <h2 class="section-title">Nuestro <span>Catálogo</span></h2>
+            <div class="products-grid">
+                <!-- Producto 1 -->
+                <div class="product-card" onclick="openModal(1)">
+                    <div class="product-image">
+                        <img src="descarga.jpeg" alt="Zapato deportivo Running Pro">
+                    </div>
+                    <div class="product-info">
+                        <h3>Running Pro X3</h3>
+                        <div class="product-price">$89.99</div>
+                        <div class="product-rating">★★★★★ (128)</div>
+                        <button class="add-to-cart-btn" onclick="openProductModal(1)">Añadir al carrito</button>
+                        
+                    </div>
+                </div>
+                
+                <!-- Producto 2 -->
+                <div class="product-card" onclick="openModal(2)">
+                    <div class="product-image">
+                        <img src="6356aa056ceada1982547707-new-nike-air-max-90-shoes-dc9388-003.jpg" alt="Zapato deportivo Air Max">
+                    </div>
+                    <div class="product-info">
+                        <h3>Air Max Ultra</h3>
+                        <div class="product-price">$119.99</div>
+                        <div class="product-rating">★★★★☆ (94)</div>
+                        <button class="add-to-cart-btn" onclick="openProductModal(1)">Añadir al carrito</button>
+                        
+                    </div>
+                </div>
+                
+                <!-- Producto 3 -->
+                <div class="product-card" onclick="openModal(3)">
+                    <div class="product-image">
+                        <img src="Air Jordan 4 Retro 'Military Black' _ DH6927-111.jpeg" alt="Zapato deportivo Training Fit">
+                    </div>
+                    <div class="product-info">
+                        <h3>Air Jordan 4 Retro</h3>
+                        <div class="product-price">$75.99</div>
+                        <div class="product-rating">★★★★★ (56)</div>
+                        <button class="add-to-cart-btn" onclick="openProductModal(1)">Añadir al carrito</button>
+                        
+                    </div>
+                </div>
+                
+                <!-- Producto 4 -->
+                <div class="product-card" onclick="openModal(4)">
+                    <div class="product-image">
+                        <img src="producto4.jpeg" alt="Zapato deportivo Sports Lite">
+                    </div>
+                    <div class="product-info">
+                        <h3>Sports Lite Pro</h3>
+                        <div class="product-price">$65.99</div>
+                        <div class="product-rating">★★★★☆ (42)</div>
+                        <button class="add-to-cart-btn" onclick="openProductModal(1)">Añadir al carrito</button>
+                        
+                    </div>
+                </div>
+                
+                <!-- Producto 5 -->
+                <div class="product-card" onclick="openModal(5)">
+                    <div class="product-image">
+                        <img src="producto5.jpeg" alt="Zapato deportivo Urban Run">
+                    </div>
+                    <div class="product-info">
+                        <h3>Urban Run Comfort</h3>
+                        <div class="product-price">$95.99</div>
+                        <div class="product-rating">★★★★★ (73)</div>
+                        <button class="add-to-cart-btn" onclick="openProductModal(1)">Añadir al carrito</button>
+                        
+                    </div>
+                </div>
+                
+                <!-- Producto 6 -->
+                <div class="product-card" onclick="openModal(6)">
+                    <div class="product-image">
+                        <img src="producto6.jpeg" alt="Zapato deportivo Trail Master">
+                    </div>
+                    <div class="product-info">
+                        <h3>Trail Master X</h3>
+                        <div class="product-price">$129.99</div>
+                        <div class="product-rating">★★★★☆ (38)</div>
+                        <button class="add-to-cart-btn" onclick="openProductModal(1)">Añadir al carrito</button>
+                        
+                    </div>
+                </div>
+                
+                <!-- Producto 7 -->
+                <div class="product-card" onclick="openModal(7)">
+                    <div class="product-image">
+                        <img src="producto7.jpeg" alt="Zapato deportivo Boost Energy">
+                    </div>
+                    <div class="product-info">
+                        <h3>Boost Energy 2.0</h3>
+                        <div class="product-price">$109.99</div>
+                        <div class="product-rating">★★★★★ (64)</div>
+                        <button class="add-to-cart-btn" onclick="openProductModal(1)">Añadir al carrito</button>
+                        
+                    </div>
+                </div>
+                
+                <!-- Producto 8 -->
+                <div class="product-card" onclick="openModal(8)">
+                    <div class="product-image">
+                        <img src="producto8.jpeg" alt="Zapato deportivo Flex Lite">
+                    </div>
+                    <div class="product-info">
+                        <h3>Flex Lite Advance</h3>
+                        <div class="product-price">$79.99</div>
+                        <div class="product-rating">★★★★☆ (48)</div>
+                        <button class="add-to-cart-btn" onclick="openProductModal(1)">Añadir al carrito</button>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal de Producto y Pago -->
+<div id="productModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2>Detalles del Producto</h2>
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+        </div>
+        <div class="modal-body">
+            <div class="product-details">
+                <div class="product-large-image">
+                    <img id="modalProductImage" src="/api/placeholder/600/400" alt="Producto">
+                </div>
+                <div class="product-thumbnails">
+                    <div class="product-thumbnail active">
+                        <img src="/api/placeholder/80/80" alt="Thumbnail 1">
+                    </div>
+                    <div class="product-thumbnail">
+                        <img src="/api/placeholder/80/80" alt="Thumbnail 2">
+                    </div>
+                    <div class="product-thumbnail">
+                        <img src="/api/placeholder/80/80" alt="Thumbnail 3">
+                    </div>
+                    <div class="product-thumbnail">
+                        <img src="/api/placeholder/80/80" alt="Thumbnail 4">
+                    </div>
+                </div>
+                <div class="product-description">
+                    <h2 id="modalProductTitle">Running Pro X3</h2>
+                    <p>Estos zapatos de running están diseñados para ofrecer máximo confort y rendimiento. Cuentan con tecnología de amortiguación avanzada, parte superior transpirable y suela duradera con excelente tracción en diferentes superficies.</p>
+                </div>
+                <div class="product-metadata">
+                    <div class="metadata-item">
+                        <span class="metadata-label">Marca</span>
+                        <span class="metadata-value">SportRun</span>
+                    </div>
+                    <div class="metadata-item">
+                        <span class="metadata-label">Material</span>
+                        <span class="metadata-value">Malla + Sintético</span>
+                    </div>
+                    <div class="metadata-item">
+                        <span class="metadata-label">Tipo</span>
+                        <span class="metadata-value">Running</span>
+                    </div>
+                </div>
+                <div class="size-selector">
+                    <h3>Selecciona tu talla</h3>
+                    <div class="size-options">
+                        <div class="size-option" onclick="selectSize(this)">38</div>
+                        <div class="size-option" onclick="selectSize(this)">39</div>
+                        <div class="size-option active" onclick="selectSize(this)">40</div>
+                        <div class="size-option" onclick="selectSize(this)">41</div>
+                        <div class="size-option" onclick="selectSize(this)">42</div>
+                        <div class="size-option" onclick="selectSize(this)">43</div>
+                    </div>
+                </div>
+                
+                <!-- Nueva sección de cantidad -->
+                <div class="quantity-selector" style="margin-top: 20px;">
+                    <h3>Cantidad</h3>
+                    <div class="quantity-control" style="display: flex; align-items: center; gap: 10px;">
+                        <button class="quantity-btn" onclick="changeQuantity(-1)" style="padding: 5px 10px; background: #f0f0f0; border: none; border-radius: 4px; cursor: pointer;">-</button>
+                        <input type="number" id="productQuantity" value="1" min="1" style="width: 50px; text-align: center; padding: 5px;">
+                        <button class="quantity-btn" onclick="changeQuantity(1)" style="padding: 5px 10px; background: #f0f0f0; border: none; border-radius: 4px; cursor: pointer;">+</button>
+                    </div>
+                </div>
+                
+                <!-- Botón para añadir al carrito -->
+                <button class="add-to-cart-btn" onclick="addToCartFromModal()" style="margin-top: 20px; width: 100%; padding: 12px; background: #ff6b00; color: white; border: none; border-radius: 4px; cursor: pointer;">
+                    Añadir al Carrito
+                </button>
+            </div>
+            
+            <div class="payment-section">
+                <h3>Resumen de Compra</h3>
+                <div class="payment-summary">
+                    <div class="summary-item">
+                        <span>Precio</span>
+                        <span id="modalProductPrice">$89.99</span>
+                    </div>
+                    <div class="summary-item">
+                        <span>Cantidad</span>
+                        <span id="modalProductQuantity">1</span>
+                    </div>
+                    <div class="summary-item">
+                        <span>Envío</span>
+                        <span>Gratis</span>
+                    </div>
+                    <div class="summary-item total">
+                        <span>Total</span>
+                        <span id="modalTotalPrice">$89.99</span>
+                    </div>
+                </div>
+                
+                <div class="payment-methods">
+                    <h4>Método de pago</h4>
+                    <div class="payment-method-options">
+                        <div class="payment-method active" onclick="selectPaymentMethod(this)">
+                            <img class="payment-method-icon" src="/api/placeholder/30/30" alt="Tarjeta">
+                            <span>Tarjeta de crédito/débito</span>
+                        </div>
+                        <div class="payment-method" onclick="selectPaymentMethod(this)">
+                            <img class="payment-method-icon" src="/api/placeholder/30/30" alt="PayPal">
+                            <span>PayPal</span>
+                        </div>
+                        <div class="payment-method" onclick="selectPaymentMethod(this)">
+                            <img class="payment-method-icon" src="/api/placeholder/30/30" alt="Transferencia">
+                            <span>Transferencia bancaria</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="checkout-form">
+                    <div class="form-group">
+                        <label for="cardNumber">Número de tarjeta</label>
+                        <input type="text" id="cardNumber" class="form-control" placeholder="1234 5678 9012 3456">
+                    </div>
+                    <div class="form-group">
+                        <label for="cardName">Nombre en la tarjeta</label>
+                        <input type="text" id="cardName" class="form-control" placeholder="Juan Pérez">
+                    </div>
+                    <div style="display: flex; gap: 15px;">
+                        <div class="form-group" style="flex: 1;">
+                            <label for="cardExpiry">Fecha de expiración</label>
+                            <input type="text" id="cardExpiry" class="form-control" placeholder="MM/AA">
+                        </div>
+                        <div class="form-group" style="flex: 1;">
+                            <label for="cardCvv">CVV</label>
+                            <input type="text" id="cardCvv" class="form-control" placeholder="123">
+                        </div>
+                    </div>
+                    <button class="orange-btn" style="width: 100%;">Pagar ahora</button>
+                    <div class="ssl-badge">
+                        <span>🔒</span> Pago seguro con certificado SSL
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-container">
+            <div class="footer-column">
+                <h3>SportRun</h3>
+                <ul>
+                    <li><a href="#about">Sobre Nosotros</a></li>
+                    <li><a href="#">Nuestra Historia</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Tiendas</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Ayuda</h3>
+                <ul>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Envíos</a></li>
+                    <li><a href="#">Devoluciones</a></li>
+                    <li><a href="#">Estado del Pedido</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Contacto</h3>
+                <ul>
+                    <li><a href="#">Email</a></li>
+                    <li><a href="#">Teléfono</a></li>
+                    <li><a href="#">WhatsApp</a></li>
+                    <li><a href="#">Dirección</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Legal</h3>
+                <ul>
+                    <li><a href="#">Términos y Condiciones</a></li>
+                    <li><a href="#">Política de Privacidad</a></li>
+                    <li><a href="#">Política de Cookies</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 SportRun. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

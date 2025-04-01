@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito - SportRun Shoes</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Estilos específicos para el carrito */
+        .cart-container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        
+        .cart-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 15px;
+        }
+        
+        .cart-title {
+            font-size: 28px;
+            color: #333;
+        }
+        
+        .continue-shopping {
+            color: #ff6b00;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            font-weight: 500;
+        }
+        
+        .continue-shopping:hover {
+            text-decoration: underline;
+        }
+        
+        .cart-content {
+            display: flex;
+            gap: 30px;
+        }
+        
+        .cart-items {
+            flex: 2;
+        }
+        
+        .cart-summary {
+            flex: 1;
+            background: #f9f9f9;
+            padding: 25px;
+            border-radius: 8px;
+            height: fit-content;
+            position: sticky;
+            top: 20px;
+        }
+        
+        .cart-item {
+            display: flex;
+            gap: 20px;
+            padding: 20px 0;
+            border-bottom: 1px solid #eee;
+            align-items: center;
+        }
+        
+        .cart-item img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+        
+        .item-details {
+            flex: 1;
+        }
+        
+        .item-details h3 {
+            margin: 0 0 5px 0;
+            font-size: 16px;
+        }
+        
+        .item-details p {
+            margin: 5px 0;
+            color: #666;
+            font-size: 14px;
+        }
+        
+        .item-total {
+            font-weight: bold;
+            min-width: 80px;
+            text-align: right;
+        }
+        
+        .remove-item {
+            background: none;
+            border: none;
+            color: #ff3b30;
+            font-size: 20px;
+            cursor: pointer;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: background 0.2s;
+        }
+        
+        .remove-item:hover {
+            background: rgba(255, 59, 48, 0.1);
+        }
+        
+        .quantity-control {
+            display: flex;
+            align-items: center;
+            margin-top: 10px;
+        }
+        
+        .quantity-btn {
+            background: #f0f0f0;
+            border: none;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 4px;
+        }
+        
+        .quantity-input {
+            width: 40px;
+            text-align: center;
+            margin: 0 5px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 5px;
+        }
+        
+        .summary-title {
+            font-size: 20px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+        }
+        
+        .summary-row.total {
+            font-weight: bold;
+            font-size: 18px;
+            border-top: 1px solid #ddd;
+            padding-top: 15px;
+            margin-top: 15px;
+        }
+        
+        .empty-cart {
+            text-align: center;
+            padding: 50px 0;
+        }
+        
+        .empty-cart img {
+            width: 150px;
+            opacity: 0.7;
+            margin-bottom: 20px;
+        }
+        
+        .empty-cart p {
+            color: #666;
+            margin-bottom: 30px;
+        }
+        
+        @media (max-width: 768px) {
+            .cart-content {
+                flex-direction: column;
+            }
+            
+            .cart-summary {
+                position: static;
+            }
+            
+            .cart-item {
+                flex-wrap: wrap;
+            }
+            
+            .item-details {
+                min-width: 60%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Encabezado (igual que en index.html) -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="/api/placeholder/50/50" alt="SportRun Logo">
+                <h1>SportRun</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html#about">Sobre Nosotros</a></li>
+                <li><a href="index.html#catalog">Catálogo</a></li>
+                <li><a href="index.html#contact">Contacto</a></li>
+            </ul>
+            <div class="cart-icon" onclick="window.location.href='carrito.html'">
+                <span>🛒</span>
+                <span class="cart-count">0</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Contenido del Carrito -->
+    <main class="cart-container">
+        <div class="cart-header">
+            <h1 class="cart-title">Tu Carrito</h1>
+            <a href="index.html" class="continue-shopping">
+                ← Seguir comprando
+            </a>
+        </div>
+        
+        <div class="cart-content">
+            <div class="cart-items" id="cart-items">
+                <!-- Los productos se cargarán aquí con JavaScript -->
+                <div class="empty-cart">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2038/2038854.png" alt="Carrito vacío">
+                    <h2>Tu carrito está vacío</h2>
+                    <p>Parece que no has añadido ningún producto aún</p>
+                    <a href="index.html" class="orange-btn">Explorar productos</a>
+                </div>
+            </div>
+            
+            <div class="cart-summary">
+                <h3 class="summary-title">Resumen del Pedido</h3>
+                <div class="summary-row">
+                    <span>Subtotal:</span>
+                    <span id="cart-subtotal">$0.00</span>
+                </div>
+                <div class="summary-row">
+                    <span>Envío:</span>
+                    <span>Gratis</span>
+                </div>
+                <div class="summary-row total">
+                    <span>Total:</span>
+                    <span id="cart-total">$0.00</span>
+                </div>
+                <a href="checkout.html" class="orange-btn" style="width: 100%; text-align: center; display: block;">
+                    Proceder al Pago
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer (igual que en index.html) -->
+    <footer>
+        <div class="container footer-container">
+            <div class="footer-column">
+                <h3>SportRun</h3>
+                <ul>
+                    <li><a href="index.html#about">Sobre Nosotros</a></li>
+                    <li><a href="#">Nuestra Historia</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Tiendas</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Ayuda</h3>
+                <ul>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Envíos</a></li>
+                    <li><a href="#">Devoluciones</a></li>
+                    <li><a href="#">Estado del Pedido</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Contacto</h3>
+                <ul>
+                    <li><a href="#">Email</a></li>
+                    <li><a href="#">Teléfono</a></li>
+                    <li><a href="#">WhatsApp</a></li>
+                    <li><a href="#">Dirección</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Legal</h3>
+                <ul>
+                    <li><a href="#">Términos y Condiciones</a></li>
+                    <li><a href="#">Política de Privacidad</a></li>
+                    <li><a href="#">Política de Cookies</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 SportRun. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="carrito.js"></script>
+</body>
+</html>
